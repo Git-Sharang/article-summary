@@ -1,0 +1,23 @@
+body {
+  padding: 20px;
+  letter-spacing: 1px;
+  margin-left: auto;
+  margin-right: auto;  
+  background-color: rgb(252, 197, 46);
+}
+
+.active {
+  font-weight: bold;
+}
+
+.register-form {
+  margin-top: 20px;
+}
+
+.form-details {
+  margin-top: 20px;
+}
+
+.form-details > div {
+  margin: 10px;
+}

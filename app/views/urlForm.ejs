@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/general.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <title>Website Summarizer</title>
+  </head>
+  <body>
+    <div class="h-100 d-flex flex-column justify-content-center">
+      <div
+        class="alert text-center
+        <% if(locals.error){ %>
+          show
+        <% } %> alert-danger alert-dismissible fade fixed-top"
+        role="alert"
+        id="statusMsg"
+      >
+        <% if(locals.error){ %> <%= error %> <% } %>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="h1 text-center mb-5">URL to summarize</div>
+      <p class="h6 text-center mb-4">
+        Enter a URL, and the app will try to summarize its contents into the
+        number of sentences you want.
+      </p>
+      <div class="d-flex justify-content-center">
+        <form method="GET" action="/processNLP" class="col-md-3">
+          <div class="form-group">
+            <label for="summarizeURL">URL</label>
+            <input
+              type="text"
+              class="form-control"
+              id="summarizeURL"
+              name="summarizeURL"
+              placeholder="http://website.to/summarize"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="numSentence"># Of Sentences</label>
+            <input
+              type="number"
+              class="form-control"
+              id="numSentence"
+              name="numSentence"
+              value="3"
+              required
+            />
+          </div>
+          <button class="btn mt-3 btn-block btn-success" type="submit">
+            Summarize Contents
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
